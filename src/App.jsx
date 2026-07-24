@@ -628,8 +628,9 @@ export default function SolarpunkPortfolio() {
               <p className="ptext">{project.long}</p>
               <div className="sec-t">Especificaciones (del documento técnico)</div>
               <ul className="specs">{project.specs.map((sp, i) => <li key={i}>{sp}</li>)}</ul>
-              <div className="sec-t">Stack</div>
+              <div className="sec-t">Stack del diseño real</div>
               <div className="stack">{project.stack.map((sk) => <span key={sk} className="chip">{sk}</span>)}</div>
+              <div style={{ fontSize: "0.75em", color: "#898781", marginTop: 4 }}>Este portafolio corre en React 19 + Vite + Three.js; los chips describen el sistema que se construiría.</div>
               {project.action && (
                 <>
                   <div className="sec-t">Control bidireccional (UI → simulador)</div>

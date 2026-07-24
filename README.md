@@ -157,5 +157,7 @@ fidelidad de cada uno.
 - 04 refugio-vivo: experimento de las dos cajas de 1 m3 con DS18B20.
 - 01, 02: validacion contra medicion; y para 02, alimentar con lluvia real.
 
-Ademas quedan afinamientos menores: alinear los chips de `stack` de algunos gemelos a
-la implementacion real, y automatizar la copia de `docs/` a `public/docs/`.
+Consistencia ya cerrada: los chips de `stack` se rotulan como "Stack del diseno real"
+(con una nota de que el portafolio corre en React + Vite + Three.js), y la copia de
+`docs/` a `public/docs/` se automatiza en el hook `prebuild` (corre en cada build,
+local y en Vercel).
