@@ -10,7 +10,7 @@ export const DOMAINS = {
     projects: [
       {
         id: "sol-terraza",
-        fidelidad: { nivel: "B", nota: "Sensores reales por MQTT; modelo heurístico, sin validación histórica.", hoja: "docs/supuestos/01-sol-terraza.md" },
+        fidelidad: { nivel: "B", nota: "Sensores reales por MQTT; modelo heurístico, sin validación histórica.", hoja: "docs/supuestos/01-sol-terraza.md", caso: "docs/casos/01-sol-terraza.md" },
         emoji: "🌱",
         name: "SOL-TERRAZA DT",
         tag: "Agrotech · Solar · Neblina andina",
@@ -43,7 +43,7 @@ export const DOMAINS = {
       },
       {
         id: "aqua-serve",
-        fidelidad: { nivel: "B", nota: "Balance hídrico con física citada; lluvia sintética.", hoja: "docs/supuestos/02-aqua-serve.md" },
+        fidelidad: { nivel: "B", nota: "Balance hídrico con física citada; lluvia sintética.", hoja: "docs/supuestos/02-aqua-serve.md", caso: "docs/casos/02-aqua-serve.md" },
         emoji: "💧",
         name: "AQUA SERVE DT",
         tag: "Data centers IA · Balance hídrico pluvial · DLC",
@@ -86,7 +86,7 @@ export const DOMAINS = {
     projects: [
       {
         id: "cobot",
-        fidelidad: { nivel: "B", nota: "Valores U reales (ISO 6946 + literatura); sin validar en cajas.", hoja: "docs/supuestos/04-refugio-vivo.md" },
+        fidelidad: { nivel: "B", nota: "Valores U reales (ISO 6946 + literatura); sin validar en cajas.", hoja: "docs/supuestos/04-refugio-vivo.md", caso: "docs/casos/04-refugio-vivo.md" },
         emoji: "🏠",
         name: "REFUGIO VIVO DT",
         tag: "Refugios modulares · Materiales reciclados · Confort térmico",
@@ -119,7 +119,7 @@ export const DOMAINS = {
       },
       {
         id: "linea-viva",
-        fidelidad: { nivel: "B", nota: "ISA-88 real implementado; cinética heurística (Monod pendiente, T5).", hoja: "docs/supuestos/05-fermenta-viva.md" },
+        fidelidad: { nivel: "B", nota: "ISA-88 real implementado; cinética heurística (Monod pendiente, T5).", hoja: "docs/supuestos/05-fermenta-viva.md", caso: "docs/casos/05-fermenta-viva.md" },
         emoji: "🧫",
         name: "FERMENTA VIVA DT",
         tag: "Fermentación de precisión · ISA-88 · Proteína sin vaca",
@@ -152,7 +152,7 @@ export const DOMAINS = {
       },
       {
         id: "almacen-smart",
-        fidelidad: { nivel: "C", nota: "Lógica de flota razonable, pero todo es criterio propio. En standby.", hoja: "docs/supuestos/06-abasto-vivo.md" },
+        fidelidad: { nivel: "C", nota: "Lógica de flota razonable, pero todo es criterio propio. En standby.", hoja: "docs/supuestos/06-abasto-vivo.md", caso: "docs/casos/06-abasto-vivo.md" },
         emoji: "🍞",
         name: "ABASTO VIVO DT",
         tag: "Banco de alimentos · Flota AMR · FEFO",
@@ -193,7 +193,7 @@ export const DOMAINS = {
     projects: [
       {
         id: "obra-viva",
-        fidelidad: { nivel: "B", nota: "Cada umbral cita norma (DIN, Res., NSR-10, ISO). Falta histórico de obra.", hoja: "docs/supuestos/07-obra-viva.md" },
+        fidelidad: { nivel: "B", nota: "Cada umbral cita norma (DIN, Res., NSR-10, ISO). Falta histórico de obra.", hoja: "docs/supuestos/07-obra-viva.md", caso: "docs/casos/07-obra-viva.md" },
         emoji: "🏗️",
         name: "OBRA-VIVA DT",
         tag: "SST · Vibración · Aire · Geotecnia",
@@ -227,7 +227,7 @@ export const DOMAINS = {
       },
       {
         id: "solar-edificio",
-        fidelidad: { nivel: "B", nota: "Validado contra PVGIS (+40 % publicado), pero sin SPA/Perez.", hoja: "docs/supuestos/09-solar-edificio.md" },
+        fidelidad: { nivel: "B", nota: "Validado contra PVGIS (+40 % publicado), pero sin SPA/Perez.", hoja: "docs/supuestos/09-solar-edificio.md", caso: "docs/casos/09-solar-edificio.md" },
         emoji: "🌡️",
         name: "SOLAR-EDIFICIO DT",
         tag: "Net Zero · irradiancia real PVGIS · EDGE / LEED",
@@ -270,7 +270,7 @@ export const DOMAINS = {
     projects: [
       {
         id: "canal-alerta",
-        fidelidad: { nivel: "B", nota: "Lluvia real de IDEAM; sin validar contra desborde real.", hoja: "docs/supuestos/10-canal-alerta.md" },
+        fidelidad: { nivel: "B", nota: "Lluvia real de IDEAM; sin validar contra desborde real.", hoja: "docs/supuestos/10-canal-alerta.md", caso: "docs/casos/10-canal-alerta.md" },
         emoji: "⛈️",
         name: "CANAL-ALERTA DT",
         tag: "Drenaje urbano · Lluvia real IDEAM · Alerta temprana",

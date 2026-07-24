@@ -606,6 +606,10 @@ export default function SolarpunkPortfolio() {
                       style={{ color: project.fidelidad.nivel === "A" ? "#1baf7a" : project.fidelidad.nivel === "B" ? "#2a78d6" : "#eda100", fontWeight: 600, whiteSpace: "nowrap" }}>
                       ver supuestos →
                     </a>
+                    {project.fidelidad.caso && <> · <a href={"/" + project.fidelidad.caso} target="_blank" rel="noreferrer"
+                      style={{ color: project.fidelidad.nivel === "A" ? "#1baf7a" : project.fidelidad.nivel === "B" ? "#2a78d6" : "#eda100", fontWeight: 600, whiteSpace: "nowrap" }}>
+                      caso de estudio →
+                    </a></>}
                   </span>
                 </div>
               )}

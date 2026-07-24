@@ -30,6 +30,9 @@ publicado" todavía. Preferimos decirlo a inflar la etiqueta.
 | 09 solar-edificio | **B** | Validado contra PVGIS con error publicado (+40 %), pero sin SPA/Perez: recurso solar heurístico. | [09](supuestos/09-solar-edificio.md) |
 | 10 canal-alerta | **B** | Lluvia real de IDEAM (T3); modelo de embalses defendible, sin validar contra desborde real. | [10](supuestos/10-canal-alerta.md) |
 
+Cada gemelo tiene además un **caso de estudio** (el por qué del proyecto, qué modela y
+qué tan real es) en [docs/casos/](casos/).
+
 ## Camino a A (qué falta a cada B)
 
 - **05** → implementar cinética de Monod (T5) sobre la estructura ISA-88 ya montada.

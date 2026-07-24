@@ -107,6 +107,7 @@ scripts/          generadores reproducibles (validacion, series embebidas)
 
 - `docs/fidelidad.md`: tabla de los 8 gemelos, niveles y justificacion.
 - `docs/supuestos/NN-<id>.md`: procedencia de cada variable por gemelo.
+- `docs/casos/NN-<id>.md`: el porque de cada gemelo (caso de estudio), qué modela y qué tan real es.
 - `docs/09-validacion.md`: metodo, fuente y error del modelo solar vs PVGIS.
 - `docs/10-validacion.md`: lluvia real de IDEAM y hallazgo del canal.
 - `docs/02-tesis.md`: tesis del balance hidrico y sensibilidad al WUE.
