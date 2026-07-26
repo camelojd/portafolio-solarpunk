@@ -21,23 +21,23 @@ publicado" todavía. Preferimos decirlo a inflar la etiqueta.
 
 | Gemelo | Nivel | Por qué | Hoja de supuestos |
 |--------|:-----:|---------|-------------------|
-| 01 sol-terraza | **B** | Sensores reales por MQTT (T2); modelo heurístico, sin validación histórica. | [01](supuestos/01-sol-terraza.md) |
+| 01 sol-terraza | **B** | Modelo heurístico del cultivo; sin validación. | [01](supuestos/01-sol-terraza.md) |
 | 02 aqua-serve | **B** | Balance hídrico con física citada (WUE, escorrentía). Lluvia **sintética**. | [02](supuestos/02-aqua-serve.md) |
 | 04 refugio-vivo | **B** | Valores U reales (ISO 6946 + literatura) y modelo sol-aire. Sin validar en cajas. | [04](supuestos/04-refugio-vivo.md) |
-| 05 fermenta-viva | **B** | ISA-88 (IEC 61512) real implementado; cinética heurística. Monod pendiente (T5). | [05](supuestos/05-fermenta-viva.md) |
+| 05 fermenta-viva | **B** | ISA-88 (IEC 61512) real implementado; cinética heurística. Monod pendiente. | [05](supuestos/05-fermenta-viva.md) |
 | 06 abasto-vivo | **C** | Colas de flota AMR razonables, pero todo es criterio propio. En standby. | [06](supuestos/06-abasto-vivo.md) |
 | 07 obra-viva | **B** | El mejor referenciado: cada umbral cita norma (DIN, Res., NSR-10, ISO). Falta histórico de obra. | [07](supuestos/07-obra-viva.md) |
-| 09 solar-edificio | **B** | Validado contra PVGIS con error publicado (+40 %), pero sin SPA/Perez: recurso solar heurístico. | [09](supuestos/09-solar-edificio.md) |
-| 10 canal-alerta | **B** | Lluvia real de IDEAM (T3); modelo de embalses defendible, sin validar contra desborde real. | [10](supuestos/10-canal-alerta.md) |
+| 09 solar-edificio | **B** | Modelo FV simplificado (sin SPA/Perez); puede usar irradiancia real de Bogotá (PVGIS). | [09](supuestos/09-solar-edificio.md) |
+| 10 canal-alerta | **B** | Usa lluvia real de IDEAM; modelo de embalses defendible, sin validar contra desborde real. | [10](supuestos/10-canal-alerta.md) |
 
 Cada gemelo tiene además un **caso de estudio** (el por qué del proyecto, qué modela y
 qué tan real es) en [docs/casos/](casos/).
 
 ## Camino a A (qué falta a cada B)
 
-- **05** → implementar cinética de Monod (T5) sobre la estructura ISA-88 ya montada.
+- **05** → implementar cinética de Monod sobre la estructura ISA-88 ya montada.
 - **07** → un histórico real de sensores de obra para validar los umbrales normativos.
-- **09** → implementar NREL SPA + transposición de Perez (diferidos en T1); ya tiene la validación.
+- **09** → implementar NREL SPA + transposición de Perez.
 - **10** → ground-truth de un desborde real (IDIGER) para contrastar la anticipación.
 - **01, 02, 04** → validación contra medición (serie histórica, o el experimento de cajas de 04).
 

@@ -1,7 +1,7 @@
 # Supuestos — 04 REFUGIO-VIVO · Nivel B
 
 Modelo térmico sol-aire en régimen permanente con **valores U reales de literatura**.
-Modelo, fuentes y experimento de validación en [docs/04-termico.md](../04-termico.md).
+El interior sale de un balance sol-aire; las fuentes de cada valor están en la tabla.
 
 | Variable | Valor | Fuente | Límite de validez |
 |----------|-------|--------|-------------------|

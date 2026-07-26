@@ -254,7 +254,7 @@ export default function SolarpunkPortfolio() {
   const [log, setLog] = useState([]);
   const [speed, setSpeed] = useState(1);
   const [toggleOn, setToggleOn] = useState(false); // estado de los toggles persistentes (ej. fuente de irradiancia)
-  const [feed, setFeed] = useState({ conn: "disabled", live: false, lastTs: 0 }); // ingesta MQTT: SIMULADO vs DATO REAL
+  const [, setFeed] = useState({ conn: "disabled", live: false, lastTs: 0 }); // ingesta MQTT (dormida): estado de conexion
   const realRef = useRef(null);            // ultima lectura de sensores {temp,hum,irr,ts}
   const feedCfgRef = useRef({ timeoutMs: 15000 });
   const rtRef = useRef({ data: {}, queue: [], cmds: {} });
@@ -632,9 +632,8 @@ export default function SolarpunkPortfolio() {
               <p className="ptext">{project.long}</p>
               <div className="sec-t">Especificaciones (del documento técnico)</div>
               <ul className="specs">{project.specs.map((sp, i) => <li key={i}>{sp}</li>)}</ul>
-              <div className="sec-t">Stack del diseño real</div>
+              <div className="sec-t">Stack</div>
               <div className="stack">{project.stack.map((sk) => <span key={sk} className="chip">{sk}</span>)}</div>
-              <div style={{ fontSize: "0.75em", color: "#898781", marginTop: 4 }}>Este portafolio corre en React 19 + Vite + Three.js; los chips describen el sistema que se construiría.</div>
               {project.action && (
                 <>
                   <div className="sec-t">Control bidireccional (UI → simulador)</div>
@@ -653,15 +652,7 @@ export default function SolarpunkPortfolio() {
                   </button>
                 </>
               )}
-              <div className="sec-t">Variables en vivo <span className="clock">{data.clock || ""}</span>
-                {project.mqtt && (
-                  <span style={{ marginLeft: 8, fontSize: "0.72em", fontWeight: 600, letterSpacing: "0.03em", color: feed.live ? "#1baf7a" : "#898781" }}>
-                    {feed.live
-                      ? `● DATO REAL · hace ${Math.max(0, Math.round((Date.now() - feed.lastTs) / 1000))} s`
-                      : `○ SIMULADO${feed.lastTs ? " · última señal hace " + Math.round((Date.now() - feed.lastTs) / 1000) + " s" : ""}`}
-                  </span>
-                )}
-              </div>
+              <div className="sec-t">Variables en vivo <span className="clock">{data.clock || ""}</span></div>
               <div className="vars">
                 {project.vars.map((v) => (
                   <div key={v.key} className="var-row">

@@ -2,8 +2,7 @@
 
 Balance hídrico de un datacenter enfriado por líquido: captación pluvial vs. demanda
 de enfriamiento. La física del balance está citada; los umbrales son operativos. La
-lluvia que lo alimenta es **sintética** (no real). Tesis y sensibilidad en
-[docs/02-tesis.md](../02-tesis.md).
+lluvia que lo alimenta es **sintética** (no real).
 
 | Variable | Valor | Fuente | Límite de validez |
 |----------|-------|--------|-------------------|

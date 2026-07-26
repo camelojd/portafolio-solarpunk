@@ -3,7 +3,7 @@
 Fermentación de precisión (proteína sin animal). La **estructura por fases sigue
 ISA-88 (IEC 61512)**, un estándar real implementado; la cinética del cultivo es
 heurística (relajación a setpoints). La cinética publicada (Monod) es trabajo futuro
-(T5): por eso hoy es B, no A.
+: por eso hoy es B, no A.
 
 | Variable | Valor | Fuente | Límite de validez |
 |----------|-------|--------|-------------------|

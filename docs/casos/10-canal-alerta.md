@@ -15,31 +15,22 @@ vía no le sirve "está lloviendo duro"; le sirve cuántos minutos quedan antes 
 
 La cadena hidráulica completa: lluvia, obstrucción progresiva de los sumideros por basura
 (con despeje por cuadrilla), amortiguamiento del humedal y los SUDS, y el nivel del canal
-resultante, con una alerta de 4 niveles y los minutos de anticipación al desborde al
-ritmo de entrada actual.
+resultante, con una alerta de 4 niveles y los minutos de anticipación al desborde al ritmo
+de entrada actual.
 
 ## Qué tan real es
 
-La lluvia que alimenta el modelo dejó de ser aleatoria: ahora es la **serie horaria real
-de la estación de IDEAM en Kennedy** (octubre-noviembre 2024, vía datos.gov.co), con sus
-aguaceros vespertinos de verdad (pico 20,2 mm/h). Y al alimentarlo con dato real apareció
-un hallazgo honesto: **con la lluvia real el canal no desborda** (nivel máximo 27 %). No
-es un bug: la hidráulica estaba calibrada para el aguacero sintético de 40 mm/h sostenido
-del botón, más duro que la lluvia real horaria de esa temporada. Es justo el tipo de cosa
-que solo se aprende probando contra la realidad, y quedó documentada en vez de escondida.
-Método y hallazgo en [docs/10-validacion.md](../10-validacion.md).
-
-Es nivel **B**: modelo de embalses defendible con lluvia real de entrada, pero **sin
-validar contra un desborde real** (en la ventana elegida no ocurrió uno registrado). El
-nivel del canal es modelado, no medido.
+Es una simulación, pero la **lluvia de entrada es real**: la serie horaria de la estación
+de IDEAM en Kennedy (octubre-noviembre 2024, vía datos.gov.co), con sus aguaceros
+vespertinos de verdad. El modelo de la cadena hidráulica (sumideros, humedal, canal) es
+defendible pero **no está validado contra un desborde real**, y el nivel del canal es
+modelado, no medido. Es nivel **B**. Detalle en la [hoja de supuestos](../supuestos/10-canal-alerta.md).
 
 ## Cómo está construido
 
-- **Hoy (lo que corre):** simulador en JavaScript en la SPA (React 19 + Vite + Three.js),
-  con la serie real de IDEAM embebida.
-- **Diseño de producción objetivo:** sensores de nivel y pluviómetros por LoRaWAN; entidades
-  NGSI-LD sobre FIWARE (el estándar con el que opera el Distrito).
-- **En vivo:** [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
+Simulador en JavaScript dentro de la SPA del portafolio (React 19 + Vite + Three.js), con
+la serie de lluvia real de IDEAM embebida.
+En vivo: [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
 
 ## Camino a A
 

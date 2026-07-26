@@ -21,25 +21,20 @@ coloreado según si queda en su rango de confort.
 
 ## Qué tan real es
 
-El corazón térmico dejó de ser inventado. Antes atenuaba la temperatura con un factor
-de "aislamiento" en escala 0 a 1 sin unidades. Ahora usa un **balance sol-aire en
-régimen permanente con valores U reales de literatura**: guadua U ≈ 0,9 W/m²K (estudios
-de muro multicapa de bambú) y acero U ≈ 6 W/m²K (ISO 6946, la chapa no aísla). El
-resultado sale de física, no de un factor de forma: techo de acero **37 °C** vs guadua
-**27 °C** al mediodía. Método, fuentes y experimento de validación en
-[docs/04-termico.md](../04-termico.md).
-
-Es nivel **B**: física simplificada con coeficientes reales, sin validar contra
-medición. El modelo es estacionario (no capta la inercia térmica), y dos parámetros
-(acoplamiento de la envolvente y ganancias internas) son supuestos documentados.
+Es una simulación. El modelo térmico usa un **balance sol-aire en régimen permanente con
+valores U reales de literatura**: guadua U ≈ 0,9 W/m²K (estudios de muro multicapa de
+bambú) y acero U ≈ 6 W/m²K (ISO 6946, la chapa no aísla). El resultado sale de física, no
+de un factor inventado: techo de acero **37 °C** vs guadua **27 °C** al mediodía. Es
+estacionario (no capta la inercia térmica), dos parámetros son supuestos, y no está
+validado contra medición. Es nivel **B**. Detalle en la
+[hoja de supuestos](../supuestos/04-refugio-vivo.md).
 
 ## Cómo está construido
 
-- **Hoy (lo que corre):** simulador en JavaScript en la SPA (React 19 + Vite + Three.js).
-- **Diseño de producción objetivo:** simulador Python + Unity + MQTT.
-- **En vivo:** [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
+Simulador en JavaScript dentro de la SPA del portafolio (React 19 + Vite + Three.js).
+En vivo: [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
 
 ## Camino a A
 
-Correr el experimento de las dos cajas de 1 m³ con sensores DS18B20 (unos 8.000 COP c/u)
-y ajustar los dos supuestos al dato medido. Detalle en [docs/04-termico.md](../04-termico.md).
+Un experimento con dos cajas de 1 m³ (una con techo de guadua, otra de acero) y sensores
+DS18B20, para ajustar los dos supuestos del modelo al dato medido.

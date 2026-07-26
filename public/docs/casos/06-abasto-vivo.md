@@ -8,34 +8,31 @@ En Colombia se pierde comida en buen estado todos los días por una logística d
 deficiente, mientras miles de hogares viven inseguridad alimentaria. Bancos de alimentos
 como ABACO conectan excedentes con comunidades vulnerables, pero dentro de un centro de
 distribución grande, coordinar una flota de robots que además tenga en cuenta que cada
-lote donado vence en una fecha distinta es un problema real. Quería resolver algo
-concreto: que los robots prioricen mover la comida según qué tan cerca esté de dañarse,
-para que ninguna donación se pierda por llegar tarde.
+lote donado vence en una fecha distinta es un problema real. Quería que los robots
+prioricen mover la comida según qué tan cerca esté de dañarse, para que ninguna donación
+se pierda por llegar tarde.
 
 ## Qué modela el gemelo
 
 Una flota de 5 robots móviles (AMR) con su batería, sus rutas y la lógica **FEFO (First
 Expired, First Out)**: cada lote entra a una cola con su fecha de caducidad, y los AMRs
 despachan primero lo más próximo a vencer. Un AMR bajo el 20 % de batería sale solo a
-cargar y vuelve al 96 %. Se puede inyectar un lote nuevo o bloquear un pasillo por
-comando. Métricas en vivo: raciones/hora, kg rescatados, backlog y lotes en riesgo.
+cargar. Se puede inyectar un lote nuevo o bloquear un pasillo por comando. Métricas en
+vivo: raciones/hora, kg rescatados, backlog y lotes en riesgo.
 
 ## Qué tan real es
 
-Es nivel **C**, y lo digo sin rodeos: la lógica de colas y priorización es razonable,
-pero **no hay robot real ni cliente**, y todos los umbrales son criterios propios de
-demostración. Está en standby hasta tener un banco de alimentos que valide si esta
-lógica tiene sentido en su operación diaria. El valor hoy es mostrar la lógica de
-decisión (FEFO, gestión de batería, replanificación), no reproducir una planta real
-(ver [hoja de supuestos](../supuestos/06-abasto-vivo.md)).
+Es nivel **C**, y lo digo sin rodeos: la lógica de colas y priorización FEFO es
+razonable, pero **no hay robot real ni cliente**, y todos los umbrales son criterios
+propios de demostración. Está en standby hasta tener un banco de alimentos que valide si
+la lógica tiene sentido en su operación. El valor hoy es mostrar la lógica de decisión,
+no reproducir una planta real. Detalle en la [hoja de supuestos](../supuestos/06-abasto-vivo.md).
 
 ## Cómo está construido
 
-- **Hoy (lo que corre):** simulador en JavaScript en la SPA (React 19 + Vite + Three.js).
-- **Diseño de producción objetivo:** navegación real sobre ROS 2 con LIDAR; Python + Unity + MQTT.
-- **En vivo:** [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
+Simulador en JavaScript dentro de la SPA del portafolio (React 19 + Vite + Three.js).
+En vivo: [portafolio-solarpunk.vercel.app](https://portafolio-solarpunk.vercel.app)
 
 ## Camino a B/A
 
-Un piloto real con un AMR y datos de operación de un banco de alimentos; hoy no está
-conectado a ninguna operación real.
+Un piloto real con un AMR y datos de operación de un banco de alimentos.
